@@ -23,14 +23,19 @@ function displayTime() {
     const btn = document.getElementById("btn");
     let clr = "Dark";
     document.getElementById("clr").innerHTML = clr;
-    
-    btn.addEventListener('click', function onClick(evennt) {
 
-        clr = "Light";
+    setTimeout(()=>{
+        displayTime();
+    },1000);
+}
+
+btn.addEventListener('click', function onClick(event) {
+
         
-        const bgColor = btn.style.backgroundColor;
         
-        if (bgColor == 'Black') {
+        const backgroundColor = btn.style.backgroundColor;
+        
+        if (backgroundColor == 'Black') {
             document.getElementById('clr').innerHTML = clr;
             btn.style.backgroundColor = 'white';
             btn.style.color = 'black';
@@ -51,10 +56,5 @@ function displayTime() {
             session.style.color = "black";
         }
     })
-
-    setTimeout(()=>{
-        displayTime();
-    },1000);
-}
 
 displayTime()
